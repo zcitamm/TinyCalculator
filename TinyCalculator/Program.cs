@@ -1,10 +1,18 @@
 ﻿Console.WriteLine("== Tiny calculator ==");
 
 Console.Write("Dividend: ");
-int dividend = int.Parse(Console.ReadLine());
+if (!int.TryParse(Console.ReadLine(), out int dividend))
+{
+    Console.WriteLine("Not a number. Bye.");
+    return;
+}
 
 Console.Write("Divisor: ");
-int divisor = int.Parse(Console.ReadLine());
+if (!int.TryParse(Console.ReadLine(), out int divisor))
+{
+    Console.WriteLine("Not a number. Bye.");
+    return;
+}
 
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine($"{dividend} / {divisor} = {dividend / divisor}");
