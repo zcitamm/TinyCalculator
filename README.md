@@ -1,3 +1,4 @@
 # TinyCalculator
-My first 5AHWII sample project
+
+Our first 5AHWII sample project
 
