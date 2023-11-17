@@ -3,11 +3,12 @@ using System;
 
         Console.WriteLine("== Tiny calculator ==");
 
-        int firstNumber = ReadNumber("Dividend");
-        int secondNumber = ReadNumber("Divisor");
 
         while (true)
         {
+            double firstNumber = ReadNumber("Erste Nummer");
+            double secondNumber = ReadNumber("Zweite Nummer");
+
             if (secondNumber == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -22,19 +23,19 @@ using System;
                 switch (op)
                 {
                     case '+':
-                        secondNumber = ReadNumber("Summand");
+                        //secondNumber = ReadNumber("Summand");
                         firstNumber = firstNumber + secondNumber;
                         break;
                     case '-':
-                        secondNumber = ReadNumber("Subtrahend");
+                        //secondNumber = ReadNumber("Subtrahend");
                         firstNumber = firstNumber - secondNumber;
                         break;
                     case '*':
-                        secondNumber = ReadNumber("Multiplikand");
+                        //secondNumber = ReadNumber("Multiplikand");
                         firstNumber = firstNumber * secondNumber;
                         break;
                     case '/':
-                        secondNumber = ReadNumber("Divisor");
+                        //secondNumber = ReadNumber("Divisor");
                         if (secondNumber == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
@@ -50,7 +51,7 @@ using System;
                 }
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Result: {firstNumber}");
+                Console.WriteLine($"Result: {firstNumber.ToString("F")}");
                 Console.ResetColor();
 
                 Console.Write("Do you want to continue? (y/n): ");
@@ -76,13 +77,13 @@ using System;
         }
     }
 
-    static int ReadNumber(string name)
+    static double ReadNumber(string name)
     {
         while (true)
         {
             Console.Write($"{name}: ");
             string input = Console.ReadLine();
-            if (int.TryParse(input, out int number))
+            if (double.TryParse(input, out double number))
             {
                 return number;
             }
